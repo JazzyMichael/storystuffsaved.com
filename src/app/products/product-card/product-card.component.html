@@ -1,0 +1,34 @@
+
+<mat-card>
+
+  <div style="display: flex; justify-content: space-between; margin-bottom: 1em">
+    <!-- <img
+      [src]="product.imagePath | imgCache | async"
+      alt="Product Image" 
+      class="product-image"
+      (click)="imageClick()" > -->
+
+    <div style="text-align: right;">
+      <p>{{ product.name }}</p>
+      <p><strong>{{ product.price | currency }}</strong></p>
+      <p><i>{{ product.details }}</i></p>
+      <p *ngIf="product.bestbuyUrl"><a [href]="product.bestbuyUrl" target="_blank">View on BestBuy</a></p>
+    </div>
+  </div>
+
+  <button mat-button 
+    *ngIf="removable"
+    style="width: 100%"
+    (click)="remove()">
+    Remove
+  </button>
+
+  <button mat-button 
+    *ngIf="!removable"
+    style="width: 100%"
+    (click)="save()"
+    [disabled]="product.saved">
+    {{ product.saved ? 'Saved' : 'Save' }}
+  </button>
+
+</mat-card>

@@ -1,0 +1,13 @@
+
+html, body { min-height: 100%; }
+body {
+    margin: 0;
+    font-family: 'Raleway', "Helvetica Neue", sans-serif;
+    background: linear-gradient(to top, #8e9eab, #eef2f3) no-repeat;
+    color: #182B4A;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}

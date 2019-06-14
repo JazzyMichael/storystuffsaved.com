@@ -1,0 +1,11 @@
+<div *ngIf="productService.product$ | async as products" class="container">
+
+  <p *ngIf="showNothingSaved(products)" class="nothing-saved">Nothing Saved!</p>
+
+  <ng-container *ngFor="let product of products">
+    <div *ngIf="(saved && product.saved) || !saved" class="product-cards">
+      <app-product-card [product]="product" [removable]="saved"></app-product-card>
+    </div>
+  </ng-container>
+
+</div>

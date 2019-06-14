@@ -1,0 +1,23 @@
+.navbar {
+    margin: 5vh auto 10vh;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    text-decoration: none;
+    cursor: pointer;
+    color: #182B4A;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+.nav-item:hover {
+    opacity: 0.75;
+}
+
+.selected {
+    border-bottom: 1px solid #182B4A;
+}
