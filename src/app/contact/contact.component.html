@@ -1,19 +1,17 @@
-
-<mat-card class="contact-card">
-  <mat-card-header style="display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+<mat-card>
+  <mat-card-header>
     <mat-card-title>Contact</mat-card-title>
     <mat-card-subtitle>Your saved items will be sent with your message!</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
-
     <form [formGroup]="contactForm">
 
       <div style="display: flex; justify-content: space-between;">
         <mat-form-field style="width: 45%">
           <input matInput placeholder="Name" formControlName="name">
         </mat-form-field>
-  
+
         <mat-form-field style="width: 45%">
           <input matInput placeholder="Phone" formControlName="phone" maxlength="10">
           <mat-error *ngIf="contactForm.get('phone').invalid">Enter a valid Phone Number</mat-error>
@@ -23,12 +21,24 @@
       <br>
 
       <mat-form-field style="width: 100%">
-        <textarea matInput #message placeholder="Message (optional)" formControlName="message" maxlength="120"></textarea>
+        <textarea
+          matInput
+          #message
+          placeholder="Message (optional)"
+          formControlName="message"
+          maxlength="120">
+        </textarea>
         <mat-hint>{{ message?.value?.length || 0 }}/120</mat-hint>
       </mat-form-field>
 
-      <button mat-raised-button [disabled]="contactForm.invalid" type="reset" (click)="onSubmit()">Send!</button>
-    </form>
+      <button
+        mat-raised-button
+        type="reset"
+        [disabled]="contactForm.invalid"
+        (click)="onSubmit()">
+        Send!
+      </button>
 
+    </form>
   </mat-card-content>
 </mat-card>

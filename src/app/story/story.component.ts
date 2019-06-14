@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <p *ngFor="let blurb of blurbs" class="blurby">{{ blurb }}</p>
   `,
   styles: [
-    '.blurby { width: 400px; max-width: 90%; margin: auto; text-align: center; animation: fade-in 1s; }'
+    '.blurby { width: 400px; max-width: 90%; margin: 1em auto; text-align: center; animation: fade-in 1s; }'
   ]
 })
 export class StoryComponent {

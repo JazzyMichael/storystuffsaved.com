@@ -9,6 +9,7 @@ import { ProductService } from '../../services/product.service';
 export class ProductCardComponent {
   @Input() product: any;
   @Input() removable: boolean;
+  removing: boolean;
 
   constructor(private productService: ProductService) { }
 
@@ -17,7 +18,11 @@ export class ProductCardComponent {
   }
 
   remove() {
-    this.productService.removeProduct(this.product);
+    this.removing = true;
+
+    setTimeout(() => {
+      this.productService.removeProduct(this.product);
+    }, 400);
   }
 
   imageClick() {

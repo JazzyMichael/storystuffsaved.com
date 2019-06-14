@@ -4,6 +4,7 @@ import { map, startWith, catchError } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 export interface Product {
+  id: string;
   name: string;
   price: number;
   description: string;
@@ -25,7 +26,7 @@ export class ProductService {
 
     this.product$ = new BehaviorSubject(cachedProducts);
 
-    this.afs.collection('products').valueChanges()
+    this.afs.collection('products').valueChanges({ idField: 'id' })
       .pipe(
         catchError(error => {
           this.product$.next(cachedProducts);
@@ -34,7 +35,7 @@ export class ProductService {
         startWith(cachedProducts),
         map((products: Product[]) => {
           return products.map(product => {
-            const savedProduct: Product = savedProducts.find(s => s.name === product.name);
+            const savedProduct: Product = savedProducts.find(s => s.id === product.id);
             product.saved = savedProduct ? true : false;
             return product;
           });
@@ -57,7 +58,7 @@ export class ProductService {
     localStorage.setItem('savedProducts', JSON.stringify(newSaved));
 
     const newProducts: Product[] = products.map(p => {
-      if (p.name === product.name) {
+      if (p.id === product.id) {
         p.saved = true;
       }
       return p;
@@ -66,18 +67,18 @@ export class ProductService {
     this.product$.next(newProducts);
   }
 
-  async removeProduct(product: Product) {
+  removeProduct(product: Product) {
     const products: Product[] = this.product$.getValue();
     const saved: Product[] = localStorage.getItem('savedProducts') ? JSON.parse(localStorage.getItem('savedProducts')) : [];
 
-    const index: number = saved.findIndex(x => x.name === product.name);
+    const index: number = saved.findIndex(x => x.id === product.id);
 
     if (index > -1) {
       saved.splice(index, 1);
       localStorage.setItem('savedProducts', JSON.stringify(saved));
 
       const newProducts: Product[] = products.map(p => {
-        if (p.name === product.name) {
+        if (p.id === product.id) {
           p.saved = false;
         }
         return p;

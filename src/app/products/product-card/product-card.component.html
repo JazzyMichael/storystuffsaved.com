@@ -1,5 +1,5 @@
 
-<mat-card>
+<mat-card [ngClass]="{'removing': removing}">
 
   <div style="display: flex; justify-content: space-between; margin-bottom: 1em">
     <img
@@ -12,7 +12,9 @@
       <p>{{ product.name }}</p>
       <p><strong>{{ product.price | currency }}</strong></p>
       <p><i>{{ product.details }}</i></p>
-      <p *ngIf="product.bestbuyUrl"><a [href]="product.bestbuyUrl" target="_blank">View on BestBuy</a></p>
+      <p *ngIf="product.bestbuyUrl">
+        <a [href]="product.bestbuyUrl" target="_blank" rel="noreferrer">View on BestBuy</a>
+      </p>
     </div>
   </div>
 

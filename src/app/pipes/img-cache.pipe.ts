@@ -26,7 +26,7 @@ export class ImgCachePipe implements PipeTransform {
         return this.http.get(`${downloadUrl}`, { responseType: 'blob' });
       }),
       switchMap(blob => {
-        return Observable.create(observer => {
+        return new Observable<string | ArrayBuffer>(observer => {
           const reader = new FileReader();
           reader.readAsDataURL(blob);
           reader.onload = () => {

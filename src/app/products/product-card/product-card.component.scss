@@ -24,3 +24,10 @@ mat-card {
     border-radius: 10%;
     transition: 0.4s all;
 }
+
+.removing {
+    -webkit-animation: fade-out 400ms;
+    -moz-animation: fade-out 400ms;
+    animation: fade-out 400ms;
+    position: absolute;
+}
