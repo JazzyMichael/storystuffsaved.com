@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import * as firebase from 'firebase/app';
+const perf = firebase.performance();
 
 @Component({
   selector: 'app-story',
@@ -9,7 +11,8 @@ import { Component } from '@angular/core';
     '.blurby { width: 400px; max-width: 90%; margin: 1em auto; text-align: center; animation: fade-in 1s; }'
   ]
 })
-export class StoryComponent {
+export class StoryComponent implements OnInit, OnDestroy {
+  screenTrace: firebase.performance.Trace;
   blurbs: string[];
 
   constructor() {
@@ -17,5 +20,14 @@ export class StoryComponent {
       'Part of my job involves working with Best Buy, which gives me access to returned products in great condition that can be purchased at a massive discount.',
       'All of the products listed on this site have been owned for only a few months, have been thoroughly tested, and include all of the original parts.'
     ];
+  }
+
+  ngOnInit() {
+    this.screenTrace = perf.trace('storyScreen');
+    this.screenTrace.start();
+  }
+
+  ngOnDestroy() {
+    this.screenTrace.stop();
   }
 }

@@ -5,12 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationModule } from './navigation/navigation.module';
+import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
-import { environment } from '../environments/environment';
+import { AngularFirePerformanceModule } from '@angular/fire/performance';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
@@ -26,6 +28,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireMessagingModule,
+    AngularFirePerformanceModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
