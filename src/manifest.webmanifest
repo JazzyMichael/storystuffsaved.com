@@ -1,5 +1,5 @@
 {
-  "name": "items-forsale",
+  "name": "Story Stuff Saved",
   "short_name": "Stuff",
   "theme_color": "#182B4A",
   "background_color": "#fafafa",
@@ -8,27 +8,7 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "assets/icons/orange-tiki-32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/orange-tiki-48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/orange-tiki-57.png",
-      "sizes": "57x57",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/orange-tiki-64.png",
-      "sizes": "64x64",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/orang-tiki-72.png",
+      "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
     },
@@ -38,27 +18,17 @@
       "type": "image/png"
     },
     {
-      "src": "assets/icons/orang-tiki-114.png",
-      "sizes": "114x114",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/orang-tiki-120.png",
-      "sizes": "120x120",
-      "type": "image/png"
-    },
-    {
       "src": "assets/icons/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "assets/icons/orange-tiki-144.png",
+      "src": "assets/icons/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "assets/icons/orange-tiki-152.png",
+      "src": "assets/icons/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png"
     },

@@ -6,9 +6,14 @@ const perf = firebase.performance();
   selector: 'app-story',
   template: `
     <p *ngFor="let blurb of blurbs" class="blurby">{{ blurb }}</p>
+
+    <p class="blurby">Source Code available on <a href="https://github.com/Jappzy/storystuffsaved.com" target="_blank" rel="noreferrer">Github</a></p>
+
+    <img src="assets/Story-Stuff-Saved.png" alt="Logo" class="logo" />
   `,
   styles: [
-    '.blurby { width: 400px; max-width: 90%; margin: 1em auto; text-align: center; animation: fade-in 1s; }'
+    '.blurby { width: 450px; max-width: 90%; margin: 1em auto; text-align: center; animation: fade-in 1s; }',
+    '.logo { margin: 10vh auto; display: block; max-width: 90%; width: 500px; }'
   ]
 })
 export class StoryComponent implements OnInit, OnDestroy {
