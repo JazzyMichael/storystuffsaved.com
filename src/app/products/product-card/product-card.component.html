@@ -12,9 +12,7 @@
       <p>{{ product.name }}</p>
       <p><strong>{{ product.price | currency }}</strong></p>
       <p><i>{{ product.details }}</i></p>
-      <p *ngIf="product.bestbuyUrl">
-        <a [href]="product.bestbuyUrl" target="_blank" rel="noreferrer">View on BestBuy</a>
-      </p>
+      <button mat-button *ngIf="product.bestbuyUrl" color="primary" (click)="openBestbuy()">View on BestBuy</button>
     </div>
   </div>
 

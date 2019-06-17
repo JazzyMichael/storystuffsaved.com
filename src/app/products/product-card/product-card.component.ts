@@ -28,4 +28,8 @@ export class ProductCardComponent {
   imageClick() {
     window.open(this.product.imageUrl, '_blank');
   }
+
+  openBestbuy() {
+    window.open(this.product.bestbuyUrl, '_blank');
+  }
 }
