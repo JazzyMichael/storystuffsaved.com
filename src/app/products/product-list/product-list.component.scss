@@ -1,5 +1,5 @@
 .container {
-    animation: slide-up 1s;
+    animation: slide-up 0.666s;
     padding-left: 4%;
     padding-right: 4%;
 }
@@ -11,12 +11,11 @@
 }
 
 .nothing-saved {
-    animation: fade-in 0.75s;
+    animation: fade-in 0.75s ease-out;
     text-align: center;
 }
 
 @keyframes slide-up {
-    0% { margin-top: 30vh; opacity: 0; }
-    80% { margin-top: 3vh }
+    0% { margin-top: 17vh; opacity: 0; }
     100% { margin-top: 0; opacity: 1; }
 }

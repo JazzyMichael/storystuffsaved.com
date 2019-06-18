@@ -11,6 +11,7 @@ export interface Product {
   imagePath: string;
   imageUrl: string;
   bestbuyUrl: string;
+  category: string;
   saved?: boolean;
 }
 
