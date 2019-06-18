@@ -12,7 +12,13 @@
       <p>{{ product.name }}</p>
       <p><strong>{{ product.price | currency }}</strong></p>
       <p><i>{{ product.details }}</i></p>
-      <button mat-button *ngIf="product.bestbuyUrl" color="primary" (click)="openBestbuy()">View on BestBuy</button>
+      <button mat-raised-button
+        *ngIf="product.bestbuyUrl"
+        color="primary"
+        class="bestbuy-button"
+        (click)="openBestbuy()">
+        View on BestBuy
+      </button>
     </div>
   </div>
 
