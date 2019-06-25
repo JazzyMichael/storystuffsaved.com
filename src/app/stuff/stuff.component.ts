@@ -20,7 +20,7 @@ const perf = firebase.performance();
     <br><br><br><br><br>
   `,
   styles: [
-    'mat-form-field { margin: auto; display: block; width: 400px; max-width: 90%; }'
+    'mat-form-field { margin: auto; display: block; width: 400px; max-width: 90%; transition: fade-in 500ms all; }'
   ]
 })
 export class StuffComponent implements OnInit, OnDestroy {
@@ -43,8 +43,7 @@ export class StuffComponent implements OnInit, OnDestroy {
       'Tablets',
       'Smart Watches',
       'Earbuds & Headphones',
-      'Consoles',
-      'Tablets'
+      'Consoles'
     ];
   }
 

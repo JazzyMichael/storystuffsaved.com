@@ -1,27 +1,18 @@
-# ItemsForsale
+# ItemsForsale / StoryStuffSaved
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+https://storystuffsaved.com/
 
-## Development server
+I had access to returned technology products at a highly discounted rate and made this site to sell them.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It's a 3-Page site; the 'Story' page describes the background story, the 'Stuff' page lists all the products for sale with filtering, and the 'Saved' page shows the user's saved products with a contact form.
 
-## Code scaffolding
+## Cool Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-PWA with angular service worker
+-$17 vector logo & icon from someone on Fiverr
+-Firebase web hooks to update products in real-time
+-moz-jpeg compression to optimize thumbnail images
+-Fancy Image Caching Pipe
+-Localstorage to cache products and store saved products
+-Corny animations
+-Custom Scrollbar on desktop
