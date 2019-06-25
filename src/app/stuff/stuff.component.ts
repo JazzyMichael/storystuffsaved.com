@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as firebase from 'firebase/app';
-const perf = firebase.performance();
 
 @Component({
   selector: 'app-stuff',
@@ -32,9 +31,15 @@ export class StuffComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
-    this.screenTrace = perf.trace('stuffScreen');
-    this.screenTrace.start();
     this.getCategories();
+
+    try {
+      const perf = firebase.performance();
+      this.screenTrace = perf.trace('stuffScreen');
+      this.screenTrace.start();
+    } catch (e) {
+      console.log('No performance tracking', e);
+    }
   }
 
   getCategories() {
@@ -48,6 +53,9 @@ export class StuffComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.screenTrace.stop();
+    try {
+      this.screenTrace.stop();
+    } catch (e) {
+    }
   }
 }
